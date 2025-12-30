@@ -1,1 +1,1 @@
-# T-cnicas-de-Computaci-n-Cient-fica
+# Técnicas-de-Computación-Científica
