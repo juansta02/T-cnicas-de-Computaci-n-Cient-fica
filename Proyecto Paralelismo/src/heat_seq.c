@@ -4,7 +4,7 @@
 #include "grid.h"
 #include "config.h"
 
-int heat_step(grid_t *g, grid_t *g_copy)
+int heat_step_seq(grid_t *g, grid_t *g_copy)
 {
     if (!g || !g->data)
         return -1;
@@ -50,7 +50,7 @@ int heat_step(grid_t *g, grid_t *g_copy)
     return 0;
 }
 
-int heat_iterate(grid_t *g, int nsteps)
+int heat_iterate_seq(grid_t *g, int nsteps)
 {
     int check_res = 0;
     grid_t g_copy;
@@ -63,7 +63,7 @@ int heat_iterate(grid_t *g, int nsteps)
 
     for (size_t i = 0; i < nsteps && check_res == 0; i++)
     {
-        check_res = heat_step(g, &g_copy);
+        check_res = heat_step_seq(g, &g_copy);
     }
     grid_free(&g_copy);
     return check_res;

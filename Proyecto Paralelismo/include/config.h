@@ -7,4 +7,9 @@
 
 typedef double real_t;
 
+#define HOT  100.0
+#define COLD 0.0
+#define DEFAULT_ITERS 1000
+#define DEFAULT_REPS  5
+
 #endif //T_CNICAS_DE_COMPUTACI_N_CIENT_FICA_CONFIG_H

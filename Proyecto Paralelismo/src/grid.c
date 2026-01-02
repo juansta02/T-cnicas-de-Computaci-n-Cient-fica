@@ -33,6 +33,17 @@ void grid_fill(grid_t *g, real_t v) {
     }
 }
 
+/*
+ * Aplica condiciones de contorno (Boundary Conditions, BC).
+ *
+ * Convención que estamos usando (según lo visto en tu salida):
+ * - Borde superior (y=0): hot
+ * - Bordes izquierdo (x=0), derecho (x=nx-1) e inferior (y=ny-1): cold
+ *
+ * Nota: Fíjate que esto hace que las ESQUINAS superiores queden a cold,
+ * porque después de poner el borde superior a hot, forzamos x=0 y x=nx-1 a cold.
+ * Por eso en tu salida el checksum sale 800 en vez de 1000 para una malla 10x10.
+ */
 void grid_apply_bc(grid_t *g, real_t hot, real_t cold) {
     if (!g || !g->data) return;
 
