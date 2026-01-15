@@ -5,7 +5,7 @@
 set -euo pipefail
 
 BINARY=${1:-./main_seq}
-OUT_CSV=${2:- results/raw/seq_base_5.csv}
+OUT_CSV=${2:-results/raw/seq_base.csv}
 
 mkdir -p "$(dirname "$OUT_CSV")"
 
